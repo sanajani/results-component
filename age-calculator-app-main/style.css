@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ## Colors ### Primary */
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+
+    
+/* ### Neutral */
+
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--Off-white);
+}
+
+/*  ------------- container -------------- */
+.container{
+    max-width: 900px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: yellow; */
+}
+
+.inner_container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    max-width: 700px;
+    width: 700px;
+    border-radius: 20px;
+    border-bottom-right-radius: 150px;
+    /* box-shadow: 0 0 1px gray; */
+
+}
+
+.input_fields > div > span{
+    display: none;
+}
+
+.input_fields{
+    display: flex;
+    /* margin: 12px 0; */
+}
+
+.age_box{
+    margin-right: 12px;
+}
+
+.age_box label{
+    margin: 6px 0;
+    display: inline-block;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--Smokey-grey);
+    letter-spacing: 1px;
+}
+
+.age_box input{
+    width: 140px;
+    display: block;
+    padding: 14px;
+    font-size: 28px;
+    border-radius: 4px;
+    border: 1px solid var(--Light-grey);
+    outline: none;
+}
+.age_box input:focus{
+    border: 1px solid var(--Purple);
+}
+.age_box input::placeholder{
+    font-weight: 700;
+    color: var(--Smokey-grey);
+}
+
+
+
+/* ---------------------- button section design  --------------------*/
+
+.input_button{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input_button span{
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--Light-grey);
+    position: absolute;
+}
+
+.input_button button{
+    border-radius: 50%;
+    background-color: var(--Purple);
+    border: none;
+    outline: none;
+    padding: 15px;
+    cursor: pointer;
+    transition: all .4s ease;
+    z-index: 111;
+    margin-left: auto;
+}
+
+.input_button button:hover{
+    background-color: var(--Off-black);
+}
+
+.age_info{
+    margin: 10px 0;
+}
+
+.age_info h1{
+    font-size: 80px;
+    font-weight: 800;
+    color: var(--Off-black);
+}
+
+.age_info h1 span{
+    color: var(--Purple);
+}
+
+/* media query */
+
+@media screen and (max-width:700px) {
+    .inner_container{
+        margin: 0 10px;
+    }
+    .input_fields{
+        width: 100%;
+    }
+
+
+    .age_box{
+        margin-right: 12px;
+        width: 90%;
+    }
+    
+    .age_box label{
+        font-weight: 600;
+    }
+    
+    .age_box input{
+        width: 100%;
+        padding: 14px 8px;
+        font-size: 20px;
+    }
+    /* .age_info{
+        margin: 10px 0;
+    } */
+    
+    .age_info h1{
+        font-size: 50px;
+        font-weight: 800;
+        color: var(--Off-black);
+    }
+    .input_button{
+        margin: 70px 0;
+        text-align: center;
+    }
+    .input_button button{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 10px;
+    }
+}
+small{
+    color: red;
+}
+@media screen and (max-width:700px) {
+    .input_button button{
+        padding: 8px;
+    }
+}

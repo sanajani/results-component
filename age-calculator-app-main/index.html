@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age-calculator-app-main</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./assets/images/favicon-32x32.png" sizes="32x32">
+</head>
+<body>
+    <div class="container">
+        <div class="inner_container">
+            <div class="input_fields">
+                <div class="day_box age_box">
+                    <label for="day">Day</label>
+                    <input id="day" type="text" placeholder="DD">
+                    <small></small>
+                </div>
+                <div class="month_box age_box">
+                    <label for="month">Month</label>
+                    <input id="month" type="text" placeholder="MM">
+                   <small></small>
+                </div>
+                <div class="year_box age_box">
+                    <label for="year">Year</label>
+                    <input id="year" type="text" placeholder="YYYY">
+                    <small></small>
+                </div>
+            </div>
+            <div class="input_button">
+                <span class="line"></span>
+            <button class="btn" id="button"><img src="./assets/images/icon-arrow.svg" alt=""></button>
+            </div>
+            <div class="age_info">
+                <h1 class="year_heading">
+                    <span class="dash" id="yearspan">38</span> Year
+                </h1>
+                <h1 class="month_heading">
+                    <span class="dash" id="monthspan">- -</span> month
+                </h1>
+                <h1 class="day_heading">
+                    <span class="dash" id="dayspan">- -</span> day
+                </h1>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
