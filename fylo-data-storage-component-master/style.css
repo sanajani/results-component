@@ -4,7 +4,8 @@
 
     /* ### Primary */
 
-    --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+    --Gradient-start: hsl(6, 100%, 80%);
+    --Gradient-end: hsl(335, 100%, 65%);
 
     /* ### Neutral */
 
@@ -112,7 +113,8 @@ body {
     display: inline-block;
     width: 75%;
     height: 100%;
-    background-color: blue;
+    background-color: var(--Gradient-start);
+    background-image: linear-gradient(to right, var(--Gradient-start), var(--Gradient-end));
     border-radius: 30px;
     position: relative;
 }
