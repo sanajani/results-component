@@ -1,26 +1,26 @@
-:root{
-    
-/* ## Colors */
+:root {
 
-/* ### Primary */
+    /* ## Colors */
 
---Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+    /* ### Primary */
 
-/* ### Neutral */
+    --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
 
---Pale-Blue: hsl(243, 100%, 93%);
---Grayish-Blue: hsl(229, 7%, 55%);
---Dark-Blue: hsl(228, 56%, 26%);
---Very-Dark-Blue: hsl(229, 57%, 11%);
+    /* ### Neutral */
+
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     width: 100vw;
     height: 100vh;
     background-color: var(--Very-Dark-Blue);
@@ -29,7 +29,7 @@ body{
     font-family: sans-serif;
 }
 
-.container{
+.container {
     width: 100vw;
     height: 50%;
     background-image: url('./images/bg-desktop.png');
@@ -40,7 +40,7 @@ body{
     position: relative;
 }
 
-.inner_container{
+.inner_container {
     width: 100%;
     /* border: 3px solid white; */
     display: flex;
@@ -48,11 +48,11 @@ body{
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     display: flex;
 }
 
-.logo_section{
+.logo_section {
     background-color: var(--Dark-Blue);
     border-radius: 10px;
     border-top-right-radius: 100px;
@@ -66,14 +66,15 @@ body{
     margin-right: 20px;
 }
 
-.logo_section h1{
+.logo_section h1 {
     font-size: 2rem;
 }
 
-.logo_section .folders{
+.logo_section .folders {
     display: flex;
 }
-.logo_section .folders span{
+
+.logo_section .folders span {
     margin: 0 10px;
     display: inline-block;
     display: flex;
@@ -87,7 +88,7 @@ body{
 
 /* progress section design */
 
-.progrees_section{
+.progrees_section {
     background-color: var(--Dark-Blue);
     margin-left: 10px;
     display: flex;
@@ -99,7 +100,7 @@ body{
     border-radius: 10px;
 }
 
-.progrees{
+.progrees {
     border-radius: 30px;
     height: 16px;
     width: 500px;
@@ -107,7 +108,7 @@ body{
     background-color: var(--Very-Dark-Blue);
 }
 
-.progrees .bar{
+.progrees .bar {
     display: inline-block;
     width: 75%;
     height: 100%;
@@ -115,7 +116,8 @@ body{
     border-radius: 30px;
     position: relative;
 }
-.progrees span::after{
+
+.progrees span::after {
     content: "";
     position: absolute;
     top: 2px;
@@ -126,19 +128,19 @@ body{
     border-radius: 50%;
 }
 
-.mb{
+.mb {
     display: flex;
     justify-content: space-between;
     margin-top: 4px;
 }
 
-.mb span{
+.mb span {
     font-size: 12px;
     text-transform: uppercase;
     color: var(--Pale-Blue);
 }
 
-.sm_message{
+.sm_message {
     position: absolute;
     top: -65px;
     right: 40px;
@@ -151,21 +153,21 @@ body{
     align-items: center;
     border-radius: 10px;
 }
-.sm_message::after{
-    content: "";
+
+.traingle {
+    width: 0;
+    height: 0;
+    display: inline-block;
     position: absolute;
+    border: 15px solid white;
+    bottom: -15px;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
     right: 0;
-    bottom: -10px;
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    /* border-right: 20px; */
-    /* border-color: white; */
-    /* border-top: 10px; */
-    /* border-bottom: 10px; */
 }
 
-.sm_message span{
+.sm_message span {
     text-transform: uppercase;
     font-size: 12px;
     margin-left: 10px;
@@ -173,7 +175,7 @@ body{
     font-weight: 600;
 }
 
-.para{
+.para {
     font-size: 14px;
     word-spacing: 1px;
     letter-spacing: 1px;
@@ -181,77 +183,97 @@ body{
     color: var(--Pale-Blue);
 }
 
-.para span{
+.para span {
     font-weight: 800;
     text-transform: uppercase;
 }
 
 @media screen and (max-width:1100px) {
-    .progrees{
+    .progrees {
         max-width: 350px;
     }
-    .inner_container{
+
+    .inner_container {
         left: 55%;
     }
-    body{
+
+    body {
         overflow: hidden;
     }
-    
-.sm_message{
-    top: -50px;
-    padding: 10px;
-    font-size: 1.8rem;
-}
+
+    .sm_message {
+        top: -50px;
+        padding: 10px;
+        font-size: 1.8rem;
+    }
 }
 
 
 @media screen and (max-width:900px) {
-    .logo_section{
+    .logo_section {
         padding: 40px 80px;
         padding-left: 10px;
         margin-right: 0px;
     }
 }
+
 @media screen and (max-width:700px) {
-    body{
-        
-        /* width: 100vw; */
-        /* height: 100vh; */
-        /* background-color: var(--Very-Dark-Blue); */
-        /* display: flex; */
-        /* font-family: sans-serif; */
-        align-items: center;
-        justify-content: center;
+
+    body {
         background-image: url('./images/bg-mobile.png');
         background-size: cover;
-        background-position: center center;
         background-repeat: no-repeat;
+        background-position: center center;
+        align-items: initial;
     }
-    .container{
+
+    .container {
         width: 100vw;
-        height: 0%;
-        margin: 0;
-        padding: 0;
-        background-image: none;
-        /* background-position: center center; */
-        /* background-size: cover; */
-        /* background-repeat: no-repeat; */
+        height: 100vh;
         border-top-left-radius: 0;
-        /* position: relative; */
-        /* margin: ; */
-    }
-    .inner_container{
-        width: 100vw;
+        position: relative;
         display: flex;
-        justify-content: center;
-        /* position: absolute; */
-        /* top: 0; */
-        /* left: 50%; */
-        /* transform: translate(-50%,-50%); */
-        /* display: flex; */
+        align-items: center;
+        background-image: none;
+    }
+
+    .inner_container {
+        width: 80%;
+        display: flex;
+        position: static;
+        transform: translate(0, 0);
+        display: flex;
+        height: 65%;
         flex-direction: column;
         margin: 0 auto;
-        gap: 10px;
-        background-color: red;
+    }
+
+    .progrees_section {
+        margin: 30px 0;
+    }
+
+    .progrees {
+        width: 100%;
+        max-width: 100%;
+    }
+    .sm_message {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        padding: 40px 0;
+        padding-left: 20px;
+    }
+
+    .traingle {
+        display: none;
+    }
+
+}
+@media screen and (max-width:500px) {
+    .sm_message {
+        padding: 20px 0;
+        padding-left: 20px;
     }
 }
