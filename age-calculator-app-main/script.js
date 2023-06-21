@@ -61,15 +61,20 @@ function validate() {
             i.style.borderColor = 'red'
             parent.querySelector('small').innerHTML = "This field is required"
             validator = false
-        }else if(monthInp.value > 12){
+        }if(monthInp.value > 12){
             monthInp.style.borderColor = 'red'
             monthInp.parentElement.querySelector('small').innerHTML = "must be a valid month"
             validator = false
-        }else if(dayInp.value > 31){
+        }if(dayInp.value > 31){
             dayInp.style.borderColor = 'red'
             dayInp.parentElement.querySelector('small').innerHTML = "must be a valid month"
             validator = false
-        }else{
+        }if(yearInp.value > year){
+            yearInp.style.borderColor = 'red'
+            yearInp.parentElement.querySelector('small').innerHTML = "must be in the past"
+            validator = false
+        }
+        else{
             monthInp.style.borderColor = 'black'
             monthInp.parentElement.querySelector('small').innerHTML = ""
             validator = true
