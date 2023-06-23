@@ -1,0 +1,158 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+}
+
+.mobile_image{
+    display: none;
+}
+
+.left{
+    width: 60%;
+    background-image: url('./images/bg-pattern-desktop.svg');
+    padding: 0px 40px 40px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.right{
+    width: 40%;
+}
+
+.bg_image{
+    background-image: url('./images/hero-desktop.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;    
+    object-fit: cover;
+}
+
+.inner_container{
+    height: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.logo{
+    margin: 60px 0;
+    width: 200px;
+}
+
+h1{
+    font-size: 60px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    line-height: 1.3;
+    margin-bottom: 0;
+    font-weight: 600;
+    transform: translateX(-100%);
+    animation: comingleft 0.5s ease forwards;
+}
+
+h1 span{
+    color: rgb(255, 145, 163);
+    font-weight: 100;
+}
+
+p{
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgb(255, 145, 163);
+    letter-spacing: 1px;
+    transform: translateX(100%);
+    opacity: 0;
+    animation: comingright 0.5s ease forwards;
+    margin: 40px 0;
+}
+
+form{
+    position: relative;
+    animation: comingleft 0.5s ease forwards;
+    transform: translateX(-100%);
+}
+
+form input{
+    width: 100%;
+    /* position: absolute; */
+    height: 55px;
+    width: 100%;
+    border-radius: 50px;
+    padding: 0 20px;
+    font-size: 1.3rem;
+    outline: none;
+    border: none;
+    border: 1px solid rgb(255, 145, 163);
+}
+
+form input::placeholder{
+    color: rgb(255, 145, 163);
+}
+
+form input:focus{
+    border: 1px solid black;
+}
+
+form input:focus::placeholder{
+    color: black;
+}
+
+form button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 55px;
+    padding: 10px 40px;
+    border-radius: 50px;
+    border: 2px solid rgb(255, 145, 163);
+    background-color: rgb(255, 145, 163);
+    cursor: pointer;
+}
+
+@keyframes comingleft {
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes comingright {
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .right{
+        display: none;
+    } 
+    .left{
+        width: 100%;
+    }
+    h1{
+        font-size: 40px;
+    }
+    p{
+        margin: 16px 0;
+    }
+    .mobile_image{
+        display: block;
+        width: calc(100% + 80px);
+        margin-left: -40px;
+        margin-right: -40px;
+    }
+    .logo{
+        margin: 30px 0;
+        width: 150px;
+    }
+}
