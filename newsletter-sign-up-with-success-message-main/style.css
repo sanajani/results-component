@@ -28,6 +28,7 @@ body{
 
 .container{
     max-width: 1100px;
+    /* display: none; */
 }
 .inner_container{
     background-color: var(--White);
@@ -36,30 +37,38 @@ body{
     max-width: 800;
     padding: 20px;
     border-radius: 30px;
+    overflow: hidden;
 }
 
 .img img{
-    /* display: none; */
     max-width: 100%;
     width: 100%;
+    animation: imgComes 1.5s ease forwards;
+    transform: translateY(-3000%);
 }
 
 .left .inner_left{
     padding: 30px;
 }
-.inner_left h1{
+.inner_left h1,.inner_confirm h1{
     font-size: 2.5rem;
     color: var(--Charcoal-Grey);
     margin: 20px 0;
+    transform: translateY(-3000%);
+    animation: comingTop 1s ease forwards;
 }
 
 .inner_left p{
     font-size: 14px;
+    transform: translateX(300%);
+    animation: comingRight 1s ease forwards;
 }
 
 ul{
     list-style: none;
     margin: 20px 0;
+    animation: comingLeft 1s ease forwards;
+    transform: translateX(-300%);
 }
 ul li{
     display: flex;
@@ -73,25 +82,34 @@ ul li img{
 }
 
 small{
-color: red;
-font-size: 10px;
-display: none;
+    display: none;
+}
+small.error{
+    font-size: 10px;
+    color: red;
+    display: initial;
 }
 .labels{
-    /* background-color: yellow; */
     display: flex;
     justify-content: space-between;
     width: 92%;
     max-width: 100%;
     margin-bottom: 7px;
+    transform: translateX(300%);
+    animation: comingRight 1s ease forwards;
+
 }
 label{
     font-size: 11px;
     font-weight: 800;
-    /* margin-bottom: 7px; */
     display: inline-block;
 }
-
+input.error{
+    border: 1px solid red;
+}
+input.error::placeholder{
+    color: red;
+}
 input{
     max-width: 100%;
     width: 92%;
@@ -101,9 +119,16 @@ input{
     outline: none;
     margin-bottom: 7px;
     cursor: pointer;
+    transform: translateX(-300%);
+    animation: comingLeft 1s ease forwards;
 }
+
+
 input:focus{
     border: 1px solid gray;
+}
+input:focus::placeholder{
+    color: var(--Grey);
 }
 
 button{
@@ -117,16 +142,141 @@ button{
     border: none;
     outline: none;
     border-radius: 6px;
-    transition: all .5s ease;
+    position: relative;
+    transform: translateX(300%);
+    animation: comingRight 1s forwards ease;
 }
-button:hover{
+button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: red;
     background-image: linear-gradient(to right, var(--Tomato),var(--Tomato-light2));
+    transition: .5s ease;
+    border-radius: 6px;
+}
+button span{
+    z-index: 100;
+    display: inline-block;
+    position: relative;
+}
+button:hover::before{
+    width: 100%;
 }
 
+
+
+
+
+@keyframes comingLeft {
+    from{
+        transform: translateX(-300%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+@keyframes comingRight {
+    from{
+        transform: translateX(300%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes comingTop {
+    from{
+        transform: translateY(-3000%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes imgComes {
+    from{
+        transform: translateY(-3000%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+
 .confirm{
-    display: none;
-    transition: all .5s ease-in;
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+.inner_confirm{
+    padding: 50px;
+    overflow: hidden;
+}
+.confirm img{
+    width: 47px;
+    animation: comingTop ease 2s forwards;
+}
+
+.inner_confirm h1{
+    line-height: 1;
+    font-weight: 700;
+}
+.inner_confirm p{
+    animation: comingLeft ease .5s forwards;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--Dark-Slate-Grey);
+    font-weight: 500;
+}
+
+.mobile{
+    display: none;
+}
+
+
+/*------------------------ media query --------------------------- */
+@media screen and (max-width:700px) {
+    .container{
+        width: 100%;
+    }
+    .inner_container{
+        background-color: var(--White);
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        border-radius: 0;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .img .desktop{
+        display: none;
+    }
+
+    .img {
+        height: 100%;
+    }
+    .right,.left{
+        min-width: 100%;
+    }
+
+    .img img{
+        display: block;
+        min-height: 100%;
+        min-width: 100%;
+        object-fit: cover;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background-size: cover;
+    }
 }
